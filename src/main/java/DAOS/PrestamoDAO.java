@@ -44,7 +44,7 @@ public class PrestamoDAO implements PrestamoDaoInt {
     @Override
     public void devolverPrestamo(Prestamo prestamo) {
         prestamo.getEjemplar().setEstado("Disponible"); //Vuelve a poner el estado del libro en Disponible
-        prestamoService.actualizarPrestamos(prestamo);
+        updatePrestamo(prestamo);
 
     }
 

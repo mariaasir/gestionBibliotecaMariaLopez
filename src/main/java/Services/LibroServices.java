@@ -74,16 +74,15 @@ public class LibroServices {
     public void borrarLibros() {
         System.out.print("ISBN del libro a eliminar: ");
         String isbn = scanner.nextLine();
-        List<Ejemplar> ejemplares = ejemplarDAO.findAllEjemplar();
-        prestamoServices.eliminarPrestamosPorLibro(isbn);
-        libroDAO.deleteLibro(isbn);
+        List<Ejemplar> ejemplares = ejemplarDAO.findAllEjemplar();   //Busca los ejemplares que tienen ese libro.
+        prestamoServices.eliminarPrestamosPorLibro(isbn);            //Elimina los prestamos que tengan ese libro
+        libroDAO.deleteLibro(isbn);                                     //Elimina el libro
         for (Ejemplar ejemplar : ejemplares) {
             if (ejemplar.getIsbn().equals(isbn)) {
-                ejemplarDAO.deleteEjemplar(ejemplar.getId());
-                sincronizarLibro();
+                ejemplarDAO.deleteEjemplar(ejemplar.getId());           //Elimina los ejemplares que tienen ese libro
             }
         }
-        sincronizarLibro();
+        sincronizarLibro();     //Sincroniza en memoria
     }
 
 
@@ -92,20 +91,23 @@ public class LibroServices {
         System.out.println("Introduzca el ISBN del libro a comprobar el Stock: ");
         String isbn = scanner.nextLine();
         int cont = 0;
-        for (Ejemplar e : libroDAO.getLibroByISBN(isbn).getEjemplars()) {
-            if (e.getEstado().equals("Disponible")) {
-                System.out.println(e);
-                cont++;
+        for (Ejemplar e : libroDAO.getLibroByISBN(isbn).getEjemplars()) {       //Recorre todos los ejemplares a partir del ISBN introducido
+            if (e.getEstado().equals("Disponible")) {       //Comprueba que el estado del ejemplar sea Disponible
+                System.out.println(e);      //Lo muestra por pantalla
+                cont++;         //Suma el contador
             }
         }
-        System.out.println("Stock: " + cont);
+        System.out.println("Stock: " + cont);       //Imprime el contador
     }
 
+
+    //Metodo para listar todos los  libros
     public List<Libro> listarLibros() {
         return librosEnMemoria;
     }
 
 
+    //Metodo para sincronizar los libros en memoria
     public void sincronizarLibro() {
         librosEnMemoria = libroDAO.getAllLibros();
     }
