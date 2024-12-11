@@ -12,6 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 public class LibroServices {
     //Inicializacion de los DAOS y la  lista que guardará los libros en memoria.
     private LibroDaoInt libroDAO;

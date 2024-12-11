@@ -4,6 +4,11 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {

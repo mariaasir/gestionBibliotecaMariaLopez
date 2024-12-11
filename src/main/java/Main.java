@@ -12,8 +12,12 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-import java.time.LocalDate;
 import java.util.Scanner;
+
+/**
+ * @author María López Patón 2ºDAM
+ */
+
 
 public class Main {
     static EntityManagerFactory emf = Persistence.createEntityManagerFactory("miUnidad");

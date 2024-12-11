@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 public class EjemplarServices {
 
     //Inicializacion de los DAOS y la  lista que guardará los ejemplares en memoria.

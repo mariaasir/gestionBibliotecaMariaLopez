@@ -6,6 +6,11 @@ import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 public class UsuarioDAO implements UsuarioDaoInt {
     //Creación del Entity Manager
     EntityManager em;

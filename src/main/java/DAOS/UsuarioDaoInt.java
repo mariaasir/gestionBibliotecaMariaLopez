@@ -4,6 +4,11 @@ import DTOS.Usuario;
 
 import java.util.List;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 public interface UsuarioDaoInt {
     void insertUsuario(Usuario usuario);
     Usuario updateUsuario(Usuario usuario);

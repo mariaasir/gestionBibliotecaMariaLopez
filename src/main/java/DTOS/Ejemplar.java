@@ -7,6 +7,10 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+/**
+ * @author María López Patón 2ºDAM
+ */
+
 
 @Entity
 @Table(name = "ejemplar")

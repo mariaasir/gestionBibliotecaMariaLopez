@@ -6,6 +6,11 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 @Entity
 @Table(name = "prestamo")
 public class Prestamo {

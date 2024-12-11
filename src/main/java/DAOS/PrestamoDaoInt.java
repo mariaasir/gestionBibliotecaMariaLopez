@@ -4,6 +4,11 @@ import DTOS.Prestamo;
 
 import java.util.List;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 public interface PrestamoDaoInt {
     void insertPrestamo(Prestamo prestamo);
     void updatePrestamo(Prestamo prestamo);

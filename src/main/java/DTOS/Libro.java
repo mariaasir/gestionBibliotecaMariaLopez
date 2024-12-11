@@ -5,6 +5,11 @@ import jakarta.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 @Entity
 @Table(name = "libro")
 public class Libro {

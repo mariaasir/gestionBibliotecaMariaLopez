@@ -8,6 +8,11 @@ import jakarta.persistence.TypedQuery;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 public class PrestamoDAO implements PrestamoDaoInt {
     //Creación del Entity Manager
     EntityManager em;

@@ -6,6 +6,10 @@ import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
 
 public class LibroDAO implements LibroDaoInt {
     //Creación del Entity Manager

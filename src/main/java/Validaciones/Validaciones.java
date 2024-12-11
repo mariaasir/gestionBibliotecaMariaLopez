@@ -7,9 +7,14 @@ import DTOS.Usuario;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * @author María López Patón 2ºDAM
+ */
+
+
 public class Validaciones {
 
-
+    //Constructor
     public Validaciones() {
     }
 
@@ -69,15 +74,16 @@ public class Validaciones {
     }
 
     //Validacion del Tipo de Usuario
-
     public boolean validarTipo(String tipo) {
-        if (tipo.equals("Normal") || tipo.equals("Administrador")) {
+        if (tipo.equals("Normal") || tipo.equals("Administrador")) {            //Solo puede ser de tipo Normal y de tipo Administrador.
             return true;
         } else {
             return false;
         }
     }
 
+
+    //Valida que el estado del ejemplar solo sea Disponible o Dañado o Prestado
     public boolean validarEstado(String estado) {
         if (estado.equals("Disponible") || estado.equals("Prestado") || estado.equals("Dañado")) {
             return true;
@@ -86,13 +92,17 @@ public class Validaciones {
         }
     }
 
+
+    //Valida los prestamos activos de un usuario
     public boolean prestamosActivos(Usuario usuario, List<Prestamo> prestamos) {
         int contador = 0;
         for (Prestamo prestamo : prestamos) {
-            if (prestamo.getUsuario().equals(usuario) && prestamo.getFechaDevolucion() == null) {
+            if (prestamo.getUsuario().equals(usuario) && prestamo.getFechaDevolucion() == null) {       //Comprueba que la fecha de devolucion sea nula, es decir, que aun no se ha devuelto
                 contador++;
             }
         }
+
+        //Solo puede tener hasta 3 prestamos activos
         if (contador < 3) {
             return true;
         } else {
@@ -100,18 +110,20 @@ public class Validaciones {
         }
     }
 
+
+    //Comprueba que el estado del ejemplar sea disponible para calcular el stock
     public boolean estadoEjemplar(Ejemplar ejemplar) {
-        if (ejemplar.getEstado().equals("Disponible")){
+        if (ejemplar.getEstado().equals("Disponible")) {
             return true;
         } else
             return false;
     }
 
-
-    public boolean penalizacionesActivas(Usuario usuario){
-        if (usuario.getPenalizacionHasta() == null){
+    //Comprueba el numero de penalizaciones Activas de un usuario
+    public boolean penalizacionesActivas(Usuario usuario) {
+        if (usuario.getPenalizacionHasta() == null) {
             return true;
-        } else if (usuario.getPenalizacionHasta().isBefore(LocalDate.now())){
+        } else if (usuario.getPenalizacionHasta().isBefore(LocalDate.now())) {
             return true;
         } else return false;
     }

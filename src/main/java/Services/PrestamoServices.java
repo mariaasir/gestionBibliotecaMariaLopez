@@ -4,16 +4,19 @@ import DAOS.EjemplarDAO;
 import DAOS.PrestamoDaoInt;
 import DAOS.UsuarioDAO;
 import DTOS.Ejemplar;
-import DTOS.Libro;
 import DTOS.Prestamo;
 import DTOS.Usuario;
 import Validaciones.Validaciones;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+
+/**
+ * @author María López Patón 2ºDAM
+ */
+
 
 public class PrestamoServices {
 
